@@ -1,0 +1,34 @@
+1) Write the program for deleting an element from the beginning and from any position.
+
+a) From beginning
+
+arr[n];
+for(i=0;i<n;i++){
+	arr[i] = arr[i+1];
+}
+n--; //decrease size of array
+
+b) From any given position k
+
+arr[n];
+for(i=k-1;i<n;i++){
+	arr[i] = arr[i+1];
+}
+n--; //decrease size of array
+
+2) Write the program for printing the array after rotating it k times towards left, where k
+   would be taken as user input.
+
+arr[n];
+arr_temp[k];
+for(i=0;i<k;i++){ //store numbers to be rotated in a temp array
+	arr_temp[i] = arr[i];
+}
+
+for(i=0;i<n-k;i++){ //shift all numbers to the left k times
+	arr[i] = arr[i+k];
+}
+
+for(i=n-k-1;i<k;i++){ //append first k numbers to the end of the array
+	arr[i] = arr_temp[i];
+}
