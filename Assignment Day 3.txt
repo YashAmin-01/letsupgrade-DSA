@@ -1,0 +1,39 @@
+1) Write a function “insert_any()” for inserting a node at any given position of the linked list. Assume
+position starts at 0.
+
+void insert_any(Node** current, int pos, int data){
+	 while(pos--){
+		if(pos == 0){
+			Node* temp = getNode(data);
+			temp->next = *current;
+			*current = temp; 
+		}else
+		current = &(*current)->next;
+	}
+size++; 
+}
+
+
+2) Write a function “delete_beg()” for deleting a node from the beginning of the linked list.
+
+void delete_beg(){  
+	struct node *ptr;   
+	else{  
+		ptr = head;  
+		head = ptr->next;  
+		free(ptr); 
+	}  
+}
+
+
+3) Write a function “delete_end()” for deleting a node from the end of the linked list.
+
+
+void delete_end(){
+	Node* second_last = head;
+	while(second_last->next->next != NULL){
+		second_last = second_last->next;
+		free(second_last->next);
+		second_last->next = NULL;
+	} 
+}
