@@ -1,0 +1,30 @@
+1) In the Binary Search algorithm, it is suggested to calculate the mid as
+beg + (end - beg) / 2 instead of (beg + end) / 2. Why is it so?
+
+When we are operating with a large array with large index values, the addition of (beg + end) may exceed the integer value. By adding 
+the half value to beg we can avoid the overflowing of the addition of numbers. 
+
+2) Write the algorithm/function for Ternary Search.
+int x;
+mid1 = beg + (end - beg) / 3;
+mid2 = end - (end - beg) / 3;
+
+while(end >= beg){
+//check if x is at any mid value
+if(arr[mid1] == x){
+	return mid1;
+}
+if(arr[mid2] == x){
+	return mid2;
+}
+
+//check in which section x lies and repeat the operation
+if(x < arr[mid1]){
+	end = mid1 - 1;
+}else if(x > arr[mid2]){
+	beg = mid2 + 1;
+}else{
+	beg = mid1 + 1;
+        end = mid2 - 1;
+}
+}
