@@ -1,0 +1,21 @@
+1) Write a function to find the maximum element in the stack.
+
+void max_element(){
+	int max = 0;
+	for(i = top; i >= 0; i--){
+		if(stack[i] > max)
+		max = stack[i];
+	}
+}
+
+
+
+2) Write a function to find the minimum element in the stack.
+
+void min_element(){
+	int min = stack[top];
+	for(i = top; i >= 0; i--){
+		if(stack[i] < min)
+		min = stack[i];
+	}
+}
